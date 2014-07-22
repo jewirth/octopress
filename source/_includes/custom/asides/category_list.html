@@ -1,0 +1,7 @@
+<section>
+	<h1>Categories</h1>
+		{% for category in site.categories %}
+			{% capture category_url %}{{ site.category_dir }}/{{ category | first | slugize | downcase | replace:' ','-' | append:'/index.html'}}{% endcapture %}
+				<a class="list-group-item {% if category_url == page.url %}active{% endif %}" href="{{ root_url | append:'/' | append:category_url }}"><span class="badge">{{ category | first }}<strong>({{ category | last | size }})</strong></span></a> &nbsp
+		{% endfor %}
+</section>
