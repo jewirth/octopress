@@ -3,7 +3,7 @@ layout: post
 title: "Swift announced"
 date: 2014-06-03 20:00:00 +0200
 comments: true
-categories: ["Apple", "Programming", "Swift"]
+categories: ["Programming", "Swift"]
 
 ---
 
