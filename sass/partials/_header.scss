@@ -1,6 +1,7 @@
 body > header {
   background: $header-bg;
   h1 {
+    font-family: $mono;
     display: inline-block;
     margin: 0;
     a, a:visited, a:hover {
@@ -9,9 +10,10 @@ body > header {
     }
   }
   h2 {
-    margin: .2em 0 0;
+    font-family: $mono;
+    margin: 0 0 0; //margin: .2em 0 0;
     @extend .sans;
-    font-size: 1em;
+    font-size: 0.8em;
     color: $subtitle-color;
     font-weight: normal;
   }
