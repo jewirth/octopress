@@ -14,7 +14,6 @@ sidebar: false
     <li><a href="/syntax/bash.html#source">source and export</a></li>
     <li><a href="/syntax/bash.html#arguments">Arguments</a></li>
     <li><a href="/syntax/bash.html#redirecting">Redirecting and piping</a></li>
-    <li><a href="/syntax/bash.html#dots">Dot syntax</a></li>
     <li><a href="/syntax/bash.html#cond">Conditional expressions</a></li>
     <li><a href="/syntax/bash.html#loops">Loops</a></li>
     <li><a href="/syntax/bash.html#funcs">Functions</a></li>

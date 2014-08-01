@@ -11,7 +11,6 @@ sidebar: false
     <li><a href="#source">source and export</a></li>
     <li><a href="#arguments">Arguments</a></li>
     <li><a href="#redirecting">Redirecting and piping</a></li>
-    <li><a href="#dots">Dot syntax</a></li>
     <li><a href="#cond">Conditional expressions</a></li>
     <li><a href="#loops">Loops</a></li>
     <li><a href="#funcs">Functions</a></li>
@@ -69,18 +68,6 @@ make &> log.txt                 # redirect std output and error to log.txt
 make 2>&1 | tee log.txt         # redirect std error to standard output, then pipe to tee
 make 2>error.txt | hexdump -C   # pipe std output but redirect error to file
 hexdump -C < log.txt            # redirect std input
-```
-
-<br><strong><a name="dots"></a></strong>
-There are three kinds of dots:
-``` bash dot syntax
-#!/bin/bash
-
-# the following line uses three dots which all have a different meaning
-#  - the first dot is like the "source" command
-#  - the second dot is the current directory
-#  - the third dot indicates a hidden file
-. ./.someScript.sh
 ```
 
 <br><strong><a name="cond"></a></strong>
