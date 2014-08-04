@@ -14,6 +14,7 @@ sidebar: false
     <li><a href="#cond">Conditional expressions</a></li>
     <li><a href="#loops">Loops</a></li>
     <li><a href="#funcs">Functions</a></li>
+    <li><a href="#commands">Commands</a></li>
 </ul>
 </p>
 
@@ -74,6 +75,13 @@ hexdump -C < log.txt            # redirect std input
 Conditional expressions:
 ``` bash conditional expressions
 #!/bin/bash
+
+# compile hello.c and run the program if compilation was successful
+gcc hello.c -o hello && ./hello
+# compile hello.c and print hello.c if compilation was not successful
+gcc hello.c -o hello || cat hello.c
+# combine both: run on success but print on failure
+gcc hello.c -o hello && ./hello || cat hello.c
 
 # execute 'ls' if argument 1 equals 1
 test $1 -eq 1 && ls
@@ -170,6 +178,24 @@ do
 	echo "argument" $i":" ${!i}
 done
 
+# example: ping hosts that are listed in server.txt (separated by space or line break)
+for i in `cat server.txt`
+do
+	echo -e -n $i "\t-> "
+	ping -c 1 $i | grep "ttl="	
+done
+
+# alternative for above using while and read
+while read f
+do
+	echo -e -n $f "\t-> "
+	ping -c 1 $f | grep "ttl="
+done < server.txt
+
+while read f
+do
+done < server.txt
+
 # while loop: loop while val is not 1 and not 2
 val=0
 while test $val != 1 && test $val != 2
@@ -207,4 +233,24 @@ bar()
 
 foo 100 5 200
 bar 100 5 200
+```
+
+<br><strong><a name="commands"></a></strong>
+Some quite useful command syntax:
+``` bash tools
+
+# show third field of each line in test.txt with delimiter '#'
+cut -d# -f3 test.txt
+
+# print the second word of each line in test.txt
+awk '{ print $2 }' test.txt
+
+# calculate something near to PI
+echo "scale=5; 22/7" | bc
+
+# replace string "auss" with "inn"
+sed s/auss/inn/g test.txt
+# same as above plus overwrite file with result and store backup with extension ".backup"
+sed -i .backup s/auss/inn/g test.txt
+
 ```
